@@ -28,3 +28,11 @@ break2.xs.1.m=break1.xs.m
 break2.(x::xs).n.m=break2.xs.(n-1).(m-1)
 rev.[]=[]
 rev.(x::xs)=rev.xs++[x]
+
+--Q4
+ispartof4.[].vs=False                                                        
+ispartof4.(s::str).vs=(maksub.(s::str).vs == vs) || ispartof4.str.vs         
+                                                                             
+maksub.[].vs=[]                                                              
+maksub.str.[]=[]                                                             
+maksub.(s::str).(v::vs)=s::maksub.str.vs
